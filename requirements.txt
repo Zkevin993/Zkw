@@ -1,0 +1,38 @@
+# BTF-Net: dependencies for training, evaluation, and EDF preprocessing.
+# Recorded experiment environment: Python 3.10.20, PyTorch 2.4.0+cu121,
+# CUDA runtime 12.1. This is a dependency list, not an exported lockfile.
+# Versions other than PyTorch were not recorded and are intentionally unpinned.
+#
+# Install CUDA-enabled PyTorch first, in the intended Python environment:
+# python -m pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu121
+# Official instructions: https://pytorch.org/get-started/previous-versions/
+#
+# Install a compatible mamba-ssm version/wheel from the working training
+# environment before installing this file. Its exact version and any local
+# modifications must be recovered from that environment for exact reproduction.
+# CUDA extensions depend on the OS, Python, PyTorch, and CUDA versions.
+# Official instructions: https://github.com/state-spaces/mamba#installation
+# An unpinned, newer mamba-ssm is not a verified replacement for that build.
+#
+# After preparing PyTorch and Mamba:
+# python -m pip install -r requirements.txt --no-build-isolation
+
+# Deep learning and state-space sequence modeling
+torch==2.4.0
+mamba-ssm
+
+# Arrays and evaluation metrics
+numpy
+scikit-learn
+
+# Training logs and TensorBoard visualization
+tensorboardX
+tensorboard
+
+# EDF preprocessing (both packages are imported by prepare_sleepedf.py)
+pyedflib
+pandas
+
+# causal-conv1d is an optional Mamba acceleration dependency; install the
+# compatible version if required by the chosen Mamba build. It is not pinned
+# here because its presence/version in the training environment is unknown.

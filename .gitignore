@@ -1,0 +1,71 @@
+# Python bytecode and local environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+*.swp
+*.swo
+*.bak
+
+# Raw sleep recordings and local dataset directories
+*.edf
+*.EDF
+*.bdf
+*.BDF
+/data/
+/datasets/
+/npz_data/
+/SleepEDF20/
+/SleepEDF78/
+**/eeg_fpz_cz/
+**/eeg_pz_oz/
+
+# Model checkpoints and TensorBoard event files
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+**/best_ckpt
+**/checkpoints/
+events.out.tfevents.*
+*.tfevents.*
+
+# Legacy experiment directories
+/results_*/
+/out_sleepedf/
+/out_sleepedfx/
+
+# Current experiment output: retain small CSV/JSON summaries.
+# Place additional shareable metrics in results/summary/.
+/results/*
+!/results/*.csv
+!/results/*.json
+!/results/summary/
+!/results/summary/**
+
+# Temporary files, build products, and packaging metadata
+/tmp/
+/temp/
+/build/
+/dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment and split specifications remain trackable:
+# environment.yml, requirements.txt, config/, sleepedf.txt, sleepedfx.txt
